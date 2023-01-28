@@ -3,7 +3,6 @@ import { fetchImages } from 'service/fetchImages';
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
-// import { Modal } from './Modal/Modal';
 
 export class App extends Component {
   state = {
@@ -17,7 +16,7 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    const { query, images, page } = this.state;
+    const { query, page } = this.state;
 
     if (prevState.query !== query || prevState.page !== page) {
       fetchImages(query, page).then(response => {
@@ -40,7 +39,6 @@ export class App extends Component {
         <Searchbar onSubmit={this.handleSubmit} />
         <ImageGallery images={images} />
         {!!this.state.images.length && <Button onClick={this.handleLoadMore} />}
-        {/* <Modal /> */}
       </div>
     );
   }
