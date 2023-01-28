@@ -6,7 +6,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 
 export class App extends Component {
   state = {
-    contacts: [],
+    test: [],
   };
 
   render() {
