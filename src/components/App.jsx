@@ -6,6 +6,14 @@ export class App extends Component {
   };
 
   render() {
-    return <div></div>;
+    return;
+    <div>
+      {/* <Searchbar />
+      <ImageGallery />
+      <ImageGalleryItem />
+      <Loader />
+      <Button />
+      <Modal /> */}
+    </div>;
   }
 }
