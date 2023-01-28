@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchImages } from 'service/fetchImages';
 import { Searchbar } from './Searchbar/Searchbar';
 // import { ImageGallery } from './ImageGallery/ImageGallery';
 // import { Button } from './Button/Button';
@@ -8,6 +9,7 @@ export class App extends Component {
   state = {
     query: '',
     images: [],
+    page: 1,
   };
 
   handleSubmit = query => {
@@ -15,8 +17,14 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.query !== this.state.query) {
-      this.setState();
+    const { query, images, page } = this.state;
+
+    if (prevState.images.length !== images.length) {
+      fetchImages(query, page).then(response => {
+        this.setState(({ images }) => ({
+          images: [...images, ...response.hits],
+        }));
+      });
     }
   }
 
