@@ -6,13 +6,24 @@ import { Searchbar } from './Searchbar/Searchbar';
 
 export class App extends Component {
   state = {
-    test: [],
+    query: '',
+    images: [],
   };
+
+  handleSubmit = query => {
+    this.setState({ query });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.query !== this.state.query) {
+      this.setState();
+    }
+  }
 
   render() {
     return (
       <div>
-        <Searchbar />
+        <Searchbar onSubmit={this.handleSubmit} />
         {/* <ImageGallery />
         <Button /> */}
         {/* <Modal /> */}

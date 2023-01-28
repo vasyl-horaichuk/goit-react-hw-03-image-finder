@@ -5,15 +5,21 @@ export class Searchbar extends Component {
     query: '',
   };
 
-  handlerChange = ({ target: { name, value } }) => {
+  handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const value = this.props.onSubmit(this.state.query);
+  };
+
   render() {
     const { query } = this.state;
 
     return (
       <header className="searcbar">
-        <form className="form">
+        <form className="form" onSubmit={this.handleSubmit}>
           <button type="submit" className="button">
             <span className="button-label">Search</span>
           </button>
@@ -23,7 +29,7 @@ export class Searchbar extends Component {
             type="text"
             name="query"
             value={query}
-            onChange={this.handlerChange}
+            onChange={this.handleChange}
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
