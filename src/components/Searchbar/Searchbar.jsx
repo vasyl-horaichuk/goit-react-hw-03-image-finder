@@ -1,4 +1,12 @@
 import { Component } from 'react';
+import { FiSearch } from 'react-icons/fi';
+import {
+  Search,
+  SearchForm,
+  SearchFormButton,
+  SearchFormButtonLabel,
+  SearchFormInput,
+} from './Searchbar.styled';
 
 export class Searchbar extends Component {
   state = {
@@ -18,14 +26,13 @@ export class Searchbar extends Component {
     const { query } = this.state;
 
     return (
-      <header className="searcbar">
-        <form className="form" onSubmit={this.handleSubmit}>
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
-          </button>
-
-          <input
-            className="input"
+      <Search>
+        <SearchForm onSubmit={this.handleSubmit}>
+          <SearchFormButton type="submit">
+            <FiSearch size={25} stroke="#3f51b5" />
+            <SearchFormButtonLabel>Search</SearchFormButtonLabel>
+          </SearchFormButton>
+          <SearchFormInput
             type="text"
             name="query"
             value={query}
@@ -34,8 +41,8 @@ export class Searchbar extends Component {
             autoFocus
             placeholder="Search images and photos"
           />
-        </form>
-      </header>
+        </SearchForm>
+      </Search>
     );
   }
 }
