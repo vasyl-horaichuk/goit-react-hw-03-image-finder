@@ -10,7 +10,7 @@ export async function fetchImages(query, page) {
 
   try {
     const response = await axios.get(
-      `?key=${params.key}&q=${query}${params.options}&per_page=40&page=${page}`
+      `?key=${params.key}&q=${query}${params.options}&per_page=12&page=${page}`
     );
     return response.data;
   } catch (error) {
