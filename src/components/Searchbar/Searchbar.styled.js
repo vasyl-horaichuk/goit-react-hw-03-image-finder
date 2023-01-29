@@ -14,7 +14,7 @@ export const Search = styled.header`
     padding-top: 12px;
     padding-bottom: 12px;
     color: #fff;
-    background-color: gray;
+    background-color: #303030;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `
@@ -25,27 +25,27 @@ export const SearchForm = styled.form`
     width: 100%;
     max-width: 600px;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 6px;
     overflow: hidden;
 
 `
 
 export const SearchFormButton = styled.button`
     display: inline-block;
-    width: 48px;
+    width: 60px;
     height: 48px;
     border: 0;
-    background-image: url(${'https://image.flaticon.com/icons/svg/149/149852.svg'});
+    background-color:  #e00027;
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     outline: none;
 
     :hover {
-        opacity: 1;
+        opacity: 0.7;
 }
 `
 
@@ -68,6 +68,11 @@ export const SearchFormInput = styled.input`
     font-size: 20px;
     border: none;
     outline: none;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    ::placeholder {
+        font: inherit;
+        font-size: 18px;
+    }
 `
