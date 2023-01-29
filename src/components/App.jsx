@@ -4,6 +4,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
+import { GalleryContainer } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -53,11 +54,11 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <GalleryContainer>
         <Searchbar onSubmit={this.handleSubmit} />
         <ImageGallery images={this.state.images} />
         {this.renderButtonOrLoder()}
-      </div>
+      </GalleryContainer>
     );
   }
 }

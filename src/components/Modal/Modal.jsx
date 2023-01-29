@@ -1,5 +1,7 @@
 import { Component } from 'react';
 
+import { Overflow, ModalWindow } from './Modal.styled';
+
 export class Modal extends Component {
   componentDidMount() {
     window.addEventListener('keydown', this.onCloseByEsc);
@@ -18,11 +20,11 @@ export class Modal extends Component {
   render() {
     const { user, largeImg, onClose } = this.props;
     return (
-      <div className="Overlay" onClick={onClose}>
-        <div className="Modal">
+      <Overflow onClick={onClose}>
+        <ModalWindow>
           <img src={largeImg} alt={user} />
-        </div>
-      </div>
+        </ModalWindow>
+      </Overflow>
     );
   }
 }

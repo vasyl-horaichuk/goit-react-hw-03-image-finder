@@ -1,5 +1,6 @@
 import { Modal } from 'components/Modal/Modal';
 import { Component } from 'react';
+import { GalleryItem, GalleryItemImg } from './ImageGalleryItem.styled';
 
 export class ImageGalleryItem extends Component {
   state = {
@@ -15,9 +16,9 @@ export class ImageGalleryItem extends Component {
     const { isModalOpen } = this.state;
     return (
       <>
-        <li onClick={this.handleToggelModal} className="gallery-item">
-          <img src={webformatURL} alt={user} />
-        </li>
+        <GalleryItem onClick={this.handleToggelModal} className="gallery-item">
+          <GalleryItemImg src={webformatURL} alt={user} />
+        </GalleryItem>
         {isModalOpen && (
           <Modal onClose={this.handleToggelModal} largeImg={largeImageURL} />
         )}
