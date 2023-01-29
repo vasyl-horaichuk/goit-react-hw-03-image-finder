@@ -8,7 +8,10 @@ export const ButtonLoadMore = styled.button`
     background-color: #ff0027;
     transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
-    display: inline-block;
+    display: flex;
+    gap:5px;
+    align-items:center;
+    justify-content: center;
     color: #fff;
     border: 0;
     text-decoration: none;
