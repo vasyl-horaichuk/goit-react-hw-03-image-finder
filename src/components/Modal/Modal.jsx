@@ -1,6 +1,8 @@
 import { Component } from 'react';
-
+import { createPortal } from 'react-dom';
 import { Overflow, ModalWindow } from './Modal.styled';
+
+const modalRef = document.querySelector('#modal-root');
 
 export class Modal extends Component {
   componentDidMount() {
@@ -19,12 +21,13 @@ export class Modal extends Component {
 
   render() {
     const { user, largeImg, onClose } = this.props;
-    return (
+    return createPortal(
       <Overflow onClick={onClose}>
         <ModalWindow>
           <img src={largeImg} alt={user} />
         </ModalWindow>
-      </Overflow>
+      </Overflow>,
+      modalRef
     );
   }
 }
