@@ -16,6 +16,9 @@ export class App extends Component {
   };
 
   handleSubmit = query => {
+    if (!query || query === this.state.query) {
+      return;
+    }
     this.setState({ query, page: 1, isLoading: true });
   };
 
