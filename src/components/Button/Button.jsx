@@ -1,5 +1,6 @@
 import { ButtonLoadMore } from './Button.styled';
 import { TiArrowSync } from 'react-icons/ti';
+import PropTypes from 'prop-types';
 
 export const Button = ({ onClick }) => {
   return (
@@ -8,4 +9,8 @@ export const Button = ({ onClick }) => {
       Load more
     </ButtonLoadMore>
   );
+};
+
+Button.propTypes = {
+  onClick: PropTypes.func,
 };

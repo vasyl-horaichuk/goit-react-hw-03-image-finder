@@ -5,6 +5,12 @@ import { Overflow, ModalWindow } from './Modal.styled';
 const modalRef = document.querySelector('#modal-root');
 
 export class Modal extends Component {
+  static defaultProps = {
+    largeImageURL: PropTypes.string.isRequired,
+    user: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
+  };
+
   componentDidMount() {
     window.addEventListener('keydown', this.onCloseByEsc);
   }
