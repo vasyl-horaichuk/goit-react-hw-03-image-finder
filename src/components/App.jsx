@@ -16,7 +16,7 @@ export class App extends Component {
   };
 
   handleSubmit = query => {
-    this.setState({ query, isLoading: true });
+    this.setState({ query, page: 1, isLoading: true });
   };
 
   componentDidUpdate(_, prevState) {
