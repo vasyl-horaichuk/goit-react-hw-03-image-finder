@@ -22,7 +22,7 @@ export class App extends Component {
   componentDidUpdate(_, prevState) {
     const { query, page } = this.state;
 
-    if (prevState.query !== query || prevState.page !== page) {
+    if (prevState.page !== page || prevState.query !== query) {
       fetchImages(query, page)
         .then(response => {
           this.setState(({ images }) => ({
