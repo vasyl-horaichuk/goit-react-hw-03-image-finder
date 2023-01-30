@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 import { Overflow, ModalWindow } from './Modal.styled';
-
+import PropTypes from 'prop-types';
 const modalRef = document.querySelector('#modal-root');
 
 export class Modal extends Component {
   static defaultProps = {
-    largeImageURL: PropTypes.string.isRequired,
+    largeImg: PropTypes.string.isRequired,
     user: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
   };
